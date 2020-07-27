@@ -1,5 +1,5 @@
 const Ansi = require('..')
-const { deepEqual, it } = require('../../test/test')
+const { deepEqual, it } = require('test').test
 
 it('should cast to string', () => {
   deepEqual(
