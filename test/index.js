@@ -1,5 +1,5 @@
 const Ansi = require('..')
-const { deepEqual, it } = require('test')
+const { deepEqual, it } = require('@kjou/test')
 
 it('should cast to string', () => {
   deepEqual(
