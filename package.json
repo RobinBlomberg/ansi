@@ -1,7 +1,16 @@
 {
-  "name": "ansi",
-  "version": "0.3.0",
+  "name": "@kjou/ansi",
+  "version": "0.3.1",
+  "author": "Robin Blomberg",
+  "dependencies": {},
   "devDependencies": {
-    "test": "github:RobinBlomberg/test#release/0.3.0"
-  }
+    "@kjou/test": "github:RobinBlomberg/test#release/0.3.1"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinBlomberg/ansi.git"
+  },
+  "license": "UNLICENSED",
+  "description": ""
 }
