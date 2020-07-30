@@ -1,7 +1,10 @@
 {
   "name": "@kjou/ansi",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Robin Blomberg",
+  "scripts": {
+    "test": "node ./test"
+  },
   "dependencies": {},
   "devDependencies": {
     "@kjou/test": "github:RobinBlomberg/test#release/0.3.1"
