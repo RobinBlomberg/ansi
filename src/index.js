@@ -1,3 +1,7 @@
+/**
+ * @typedef {import('../types').Style} Style
+ */
+
 const ANSI_ESCAPE_CODE_REGEXP = /\x1b\[([0-9]+)m/gi;
 
 /* eslint-disable sort-keys */
@@ -56,7 +60,7 @@ const Codes = {
 /**
  * @param {number} open
  * @param {number} close
- * @return {(string: *) => string}
+ * @return {Style}
  */
 const _createStyle = (open, close) => {
   const openSequence = `\x1b[${open}m`;
@@ -72,10 +76,6 @@ const _createStyle = (open, close) => {
     return `${openSequence}${unclosedString}${closeSequence}`;
   };
 };
-
-const _blackBright = _createStyle(Codes.F_OPEN_BLACK_BRIGHT, Codes.F_CLOSE);
-
-const _bgBlackBright = _createStyle(Codes.B_OPEN_BLACK_BRIGHT, Codes.B_CLOSE);
 
 /**
  * @param {string} string
@@ -109,8 +109,8 @@ export const bgBlue = _createStyle(Codes.B_OPEN_BLUE, Codes.B_CLOSE);
 export const bgMagenta = _createStyle(Codes.B_OPEN_MAGENTA, Codes.B_CLOSE);
 export const bgCyan = _createStyle(Codes.B_OPEN_CYAN, Codes.B_CLOSE);
 export const bgWhite = _createStyle(Codes.B_OPEN_WHITE, Codes.B_CLOSE);
-export { _blackBright as blackBright };
-export const gray = _blackBright;
+export const blackBright = _createStyle(Codes.F_OPEN_BLACK_BRIGHT, Codes.F_CLOSE);
+export const gray = blackBright;
 export const redBright = _createStyle(Codes.F_OPEN_RED_BRIGHT, Codes.F_CLOSE);
 export const greenBright = _createStyle(Codes.F_OPEN_GREEN_BRIGHT, Codes.F_CLOSE);
 export const yellowBright = _createStyle(Codes.F_OPEN_YELLOW_BRIGHT, Codes.F_CLOSE);
@@ -118,8 +118,8 @@ export const blueBright = _createStyle(Codes.F_OPEN_BLUE_BRIGHT, Codes.F_CLOSE);
 export const magentaBright = _createStyle(Codes.F_OPEN_MAGENTA_BRIGHT, Codes.F_CLOSE);
 export const cyanBright = _createStyle(Codes.F_OPEN_CYAN_BRIGHT, Codes.F_CLOSE);
 export const whiteBright = _createStyle(Codes.F_OPEN_WHITE_BRIGHT, Codes.F_CLOSE);
-export { _bgBlackBright as bgBlackBright };
-export const bgGray = _bgBlackBright;
+export const bgBlackBright = _createStyle(Codes.B_OPEN_BLACK_BRIGHT, Codes.B_CLOSE);
+export const bgGray = bgBlackBright;
 export const bgRedBright = _createStyle(Codes.B_OPEN_RED_BRIGHT, Codes.B_CLOSE);
 export const bgGreenBright = _createStyle(Codes.B_OPEN_GREEN_BRIGHT, Codes.B_CLOSE);
 export const bgYellowBright = _createStyle(Codes.B_OPEN_YELLOW_BRIGHT, Codes.B_CLOSE);
