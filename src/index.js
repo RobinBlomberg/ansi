@@ -1,5 +1,5 @@
 /**
- * @typedef {import('../types').Style} Style
+ * @typedef {(string: any) => string} Style
  */
 
 const ANSI_ESCAPE_CODE_REGEXP = /\x1b\[([0-9]+)m/gi;
