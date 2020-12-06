@@ -1,4 +1,4 @@
-export function unstyle(string: string): string;
+export function strip(string: string): string;
 export function reset(string: any): string;
 export function bold(string: any): string;
 export function dim(string: any): string;

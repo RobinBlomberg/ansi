@@ -81,7 +81,7 @@ const _createStyle = (open, close) => {
  * @param {string} string
  * @return {string}
  */
-export const unstyle = (string) => {
+export const strip = (string) => {
   return string.replace(ANSI_ESCAPE_CODE_REGEXP, '');
 };
 
