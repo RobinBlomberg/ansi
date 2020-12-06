@@ -2,7 +2,10 @@
  * @typedef {(string: any) => string} Style
  */
 
-const ANSI_ESCAPE_CODE_REGEXP = /\x1b\[([0-9]+)m/gi;
+/**
+ * Adapted from {@link https://github.com/chalk/ansi-regex/blob/master/index.js ansi-regex}.
+ */
+const ANSI_ESCAPE_CODE_REGEXP = /[\u001B\u009B][[\]()#;?]*(?:(?:(?:[a-zA-Z\d]*(?:;[-a-zA-Z\d/#&.:=?%@~_]*)*)?\u0007)|(?:(?:\d{1,4}(?:;\d{0,4})*)?[\dA-PR-TZcf-ntqry=><~]))/g;
 
 /* eslint-disable sort-keys */
 const Codes = {
